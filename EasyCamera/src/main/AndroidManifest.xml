@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.ahrsoft.easycamera">
+    package="dev.ahrsoft.easycamera" >
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application>
+        <activity
+            android:name=".CameraActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EasyCamera"
+            android:exported="true" />
+    </application>
 
 </manifest>

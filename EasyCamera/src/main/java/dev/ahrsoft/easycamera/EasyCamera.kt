@@ -2,23 +2,28 @@ package dev.ahrsoft.easycamera
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentActivity
 
 class EasyCamera {
+
     companion object{
-        fun start(context: Context){
+        fun start(context : Context){
             val camera = EasyCamera()
             camera.start(context)
         }
     }
 
-    fun start(ctx : Context){
-        val dialog = AlertDialog.Builder(ctx)
-            .setTitle(ctx.getString(R.string.title_dialog))
+    fun start(context : Context){
+        val dialog = AlertDialog.Builder(context)
+            .setTitle(context.getString(R.string.title_dialog))
             .setItems(R.array.options
             ) { dialog, position ->
                 if (position == 0) {
-                    print("camera")
+                    context.startActivity(Intent(context, CameraActivity::class.java))
                     dialog!!.dismiss()
                 } else {
                     print("Gallery")
@@ -27,8 +32,4 @@ class EasyCamera {
             }
         dialog.show()
     }
-
-
-
-
 }

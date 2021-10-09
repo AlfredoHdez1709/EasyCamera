@@ -4,5 +4,6 @@
 
     <string name="camera">Camara</string>
     <string name="gallery">Galeria</string>
+    <string name="app_name">EasyCamera</string>
 
 </resources>
